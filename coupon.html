@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券首页</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="./less/coupon.less">
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+<!-- 优惠券首页:头部 -->
+<header id="header">
+    <div class="left">
+        <a href="#" class="fa fa-arrow-left"></a>
+    </div>
+    <div class="content">
+        优惠券
+    </div>
+    <div class="app_down">
+        <a href="#">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </div>
+</header>
+
+<!-- 优惠券首页:主体内容 -->
+<main id="main">
+    <div class="mui-row">
+        <div class="mui-col-xs-6">
+            <a href="#">
+                <img src="./images/KFC_logo.png" alt="">
+                <p>肯德基</p>
+            </a>
+        </div>
+        <div class="mui-col-xs-6">
+            <a href="#">
+                <img src="./images/KFC_logo.png" alt="">
+                <p>肯德基</p>
+            </a>
+        </div>
+        <div class="mui-col-xs-6">
+            <a href="#">
+                <img src="./images/KFC_logo.png" alt="">
+                <p>肯德基</p>
+            </a>
+        </div>
+        <div class="mui-col-xs-6">
+            <a href="#">
+                <img src="./images/KFC_logo.png" alt="">
+                <p>肯德基</p>
+            </a>
+        </div>
+    </div>
+
+</main>
+
+<!-- 优惠券首页:底部 -->
+<footer id="footer">
+    <div class="discount_footer">
+        <a href="#">首页</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="coupon.html">优惠券</a>
+    </div>
+    <!--公共底部-->
+    <div class="mmb_foot">
+        <div class="foot_top">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <i class="fa fa-arrow-circle-o-up" ></i>
+                返回顶部
+            </a>
+        </div>
+        <div class="statement">
+            <p>
+                <a href="#" style="color: #ff4e49">手机APP下载</a>
+                <a href="#">慢慢买手机版 -- 掌上比价平台</a>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </div>
+</footer>
+
+<!-- 优惠券标题信息 模版-->
+<script type="text/html" id="getcouponTmp">
+{{each result value}}
+    <div class="mui-col-xs-6">
+        <a href="couponproduct.html?couponid={{value.couponId}}">
+            <img src="{{value.couponImg}}" alt="">
+            <p>{{value.couponTitle}}</p>
+        </a>
+    </div>
+    {{/each}}
+</script>
+
+
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/coupon.js"></script>
+</body>
+</html>
