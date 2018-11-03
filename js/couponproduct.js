@@ -127,6 +127,13 @@ MMB.prototype = {
             bounce: true //是否启用回弹
         });
     },
+    //回到顶部
+    callbackTop:function(){
+        $('#footer .mmb_foot .callbackTop').on('tap',function () { 
+            // 快速回滚到该区域顶部
+            mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,100);//100毫秒滚动到顶
+         })
+    },
     //js获取url指定参数值(解决了中文乱码的问题)
     getQueryString: function (name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
