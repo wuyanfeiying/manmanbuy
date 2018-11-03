@@ -12,10 +12,11 @@
     <script src="lib/less/less.js"></script>
 </head>
 <body>
+
 <!-- 优惠券详情页:头部 -->
 <header id="header">
     <div class="left">
-        <a href="#" class="fa fa-arrow-left"></a>
+        <a href="coupon.html" class="fa fa-arrow-left"></a>
     </div>
     <div class="content">
         肯德基优惠券
@@ -29,29 +30,54 @@
 
 <!-- 优惠券详情页:主体内容 -->
 <main id="main">
-    <p>--点餐前出示手机中的优惠券,即可享受优惠--</p>
-    <div class="discount_product clearfix">
-        <ul>
-            <li class="clearfix" id="0">
-                <a href="#">
-                    <div class="discount_product_l ">
-                        <img
-                                src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"
-                                alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
-                    </div>
-                    <div class="discount_product_r">
-                        <div class="product_top">
-                            <h3>C27 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券</h3>
-                            <p>￥ 28</p>
-                        </div>
-                        <div class="product_bottom"> 有效期至10月31日<i class="fa fa-angle-right"></i></div>
+    <!-- mui区域滚动 -->
+    <div class="mui-scroll-wrapper ">
+        <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <p>--点餐前出示手机中的优惠券,即可享受优惠--</p>
+            <div class="discount_product clearfix">
+                <ul>
+                    <li class="clearfix" id="0">
+                        <a href="#">
+                            <div class="discount_product_l ">
+                                <img
+                                        src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"
+                                        alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
+                            </div>
+                            <div class="discount_product_r">
+                                <div class="product_top">
+                                    <h3>C27 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券</h3>
+                                    <p>￥ 28</p>
+                                </div>
+                                <div class="product_bottom"> 有效期至10月31日<i class="fa fa-angle-right"></i></div>
 
-                    </div>
-                </a>
-            </li>
-        </ul>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </main>
+
+<!--加载动画效果-->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+    </div>
+
+</div>
 
 <!-- 优惠券详情页:底部 -->
 <footer id="footer">
@@ -60,14 +86,14 @@
         <i class="fa fa-angle-right"></i>
         <a href="coupon.html">优惠券</a>
         <i class="fa fa-angle-right"></i>
-        <a class="footer_title" href="coupon.html">肯德基优惠券</a>
+        <a class="footer_title" href="#">肯德基优惠券</a>
     </div>
     <!--公共底部-->
     <div class="mmb_foot">
         <div class="foot_top">
             <a href="#">登录</a>
             <a href="#">注册</a>
-            <a href="#">
+            <a href="#header">
                 <i class="fa fa-arrow-circle-o-up"></i>
                 返回顶部
             </a>
@@ -85,16 +111,47 @@
 <!-- 隐藏面板 -->
 <div class="mask" style="display: none">
     <div class="error">X</div>
-    <ul class="imgBox clearfix">
-        <li class="item active" id="proImg"> <img src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg" alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券"> </li>
-    </ul>
+
+    <!--<ul class="imgBox clearfix">-->
+        <!--<li class="item active" id="proImg"><img src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"-->
+                                                 <!--alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券"></li>-->
+    <!--</ul>    -->
+    <div id="slider" class="imgBox clearfix mui-slider" >
+        <ul class="mui-slider-group mui-slider-loop">
+            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+            <li class="mui-slider-item mui-slider-item-duplicate">
+                <img src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"
+                     alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
+            </li>
+            <!-- 第一张 -->
+            <li class="mui-slider-item ">
+                <img src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"
+                     alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
+            </li>
+            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+            <li class="mui-slider-item mui-slider-item-duplicate">
+                <img src="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg"
+                     alt=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
+            </li>
+        </ul>
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+        </div>
+    </div>
 </div>
 
 <!-- 优惠券详情页:渲染模版 -->
 <script type="text/html" id="couponproductTmp">
     {{each result value}}
-    <li class="clearfix" id="{{value.couponProductId}}">
-        <a href="#">
+    <li class="mui-table-view-cell" id="{{value.couponProductId}}">
+        <!--滑动模块右边的菜单-->
+        <div class="mui-slider-right mui-disabled">
+            <a class="mui-btn mui-btn-blue mui-icon btn-edit">编辑</a>
+            <a class="mui-btn mui-btn-red mui-icon btn-delete">删除</a>
+        </div>
+        <!--滑动模块左边固定的内容-->
+        <a href="#" class=" mui-slider-handle">
             <div class="discount_product_l ">
                 {{@value.couponProductImg}}
             </div>
@@ -107,6 +164,7 @@
 
             </div>
         </a>
+
     </li>
     {{/each}}
 </script>

@@ -1,6 +1,13 @@
 /*主颜色*/
 @main-color: #f4483e;
 
+html,body{
+  height: 100%;
+}
+body{
+  padding: 45px 0;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -15,14 +22,17 @@
   visibility: hidden;
 }
 
-/*优惠券首页:头部*/
+/*优惠券首页:头部 区域滚动的时候,头部要top:0 */
 #header{
+  position: absolute;
+  top: 0;
   display: flex;
   width: 100%;
   height: 44px;
   box-sizing: border-box;
   background-color: @main-color;
   padding: 0 10px;
+  z-index: 999;
   .left{
     width: 30px;
     height: 100%;
@@ -62,7 +72,9 @@
 
 /*优惠券首页:主体内容*/
 #main{
-  padding: 5px 0;
+  height: 100%;
+  //top: -40px;
+  position: relative;
   p{
     width: 100%;
     margin: 0;
@@ -78,11 +90,18 @@
       list-style: none;
       width: 100%;
       li{
+        /*滑动模块右边的菜单*/
+        div{
+          a{
+            font-size: 16px;
+            font-weight: bolder;
+          }
+        }
         a{
-          width: 100%;
+          white-space: normal;
           overflow: hidden;
-          padding: 8px;
           border-bottom: 1px solid #e6e6e6;
+          border-top: 0;
           background-size: 30px 30px;
           color: #000;
           display: flex;
@@ -136,7 +155,10 @@
 
 /*优惠券首页:底部*/
 #footer{
+  position: relative;
+  z-index: 1000;
   .discount_footer{
+
     width: 100%;
     margin-top: 0;
     margin-bottom: 10px;
@@ -211,7 +233,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1001;
   .error{
     width: 20px;
     height: 20px;
@@ -247,4 +269,111 @@
       }
     }
   }
+}
+
+/*加载动画效果*/
+#loading {
+  background-color: rgba(0,0,0,.8);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 998;
+  margin-top: 0;
+  top: 0;
+  display: none;
+}
+
+#loading-center {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#loading-center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50px;
+  width: 150px;
+  margin-top: -25px;
+  margin-left: -75px;
+}
+
+.object {
+  width: 8px;
+  height: 50px;
+  margin-right: 5px;
+  background-color: #FFF;
+  -webkit-animation: animate 1s infinite;
+  animation: animate 1s infinite;
+  float: left;
+}
+
+.object:last-child {
+  margin-right: 0;
+}
+
+.object:nth-child(10) {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.object:nth-child(9) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.object:nth-child(8) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.object:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.object:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.object:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.object:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.object:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.object:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+@-webkit-keyframes animate {
+
+  50% {
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+
+  }
+
+}
+
+@keyframes animate {
+  50% {
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+
 }
