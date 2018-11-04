@@ -7,6 +7,7 @@ $(function () {
     mmb.couponproductMask();
     mmb.initScroll();
     mmb.slider();
+    mmb.callbackTop();
 });
 
 var MMB = function () {
@@ -37,6 +38,9 @@ MMB.prototype = {
                 // console.log(data);
                 var html = template('couponproductTmp', data);
                 $('#main .discount_product ul').html(html);
+
+                $("#rocket").hide();
+
                 //获取后台传过来的数据里的商品id
                 // var resultObj = data.result[0];
                 // console.log(resultObj.couponProductId);
@@ -129,7 +133,19 @@ MMB.prototype = {
     },
     //回到顶部
     callbackTop:function(){
-        $('#footer .mmb_foot .callbackTop').on('tap',function () { 
+
+        var scroll = mui('.mui-scroll-wrapper').scroll();
+
+        document.querySelector('.mui-scroll-wrapper').addEventListener('scroll',function (e) {
+            //console.log(-scroll.y);
+            if(-scroll.y>300){
+                $("#rocket").show();
+            }else{
+                $("#rocket").hide();
+            }
+        });
+
+        $('#rocket').on('tap',function () {
             // 快速回滚到该区域顶部
             mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,100);//100毫秒滚动到顶
          })

@@ -105,7 +105,7 @@ body {
     border-bottom: 1px solid #e6e6e6;
     border-top: 0;
     background-size: 0.3rem 0.3rem;
-    color: #000;
+    /*color: #000;*/
     display: flex;
 }
 #main .discount_product ul li a .discount_product_l {
@@ -258,6 +258,22 @@ body {
     height: 100%;
     vertical-align: middle;
 }
+
+/*回到顶部小火箭*/
+#rocket {
+    position: absolute;
+    top: 85%;
+    right: 5%;
+    z-index: 999;
+    height: 0.32rem;
+    width: 0.32rem;
+}
+#rocket i {
+    font-size: 0.32rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
 /*加载动画效果*/
 #loading {
     background-color: rgba(0, 0, 0, 0.8);
